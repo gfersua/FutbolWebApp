@@ -1,5 +1,5 @@
 Compiling Program: C:\DataFlex Projects\FutbolWebApp\AppSrc\WebApp.src
-Memory Available: 44398411776
+Memory Available: 43975454720
 1>Use AllWebAppClasses.pkg
 Using pre-compiled package ALLWEBAPPCLASSES.PKG
 Including file: AllWebAppClasses.x64.pkd    (C:\Program Files\DataFlex 25.0\Pkg\AllWebAppClasses.x64.pkd)
@@ -127,7 +127,7 @@ Including file: LoginEncryptionKey.inc    (C:\DataFlex Projects\FutbolWebApp\App
 36367>End_Object
 36368>
 36368>Object oWebApp is a cWebApp
-36370>    Set psTheme to "Df_Material"
+36370>    Set psTheme to "Df_PruebaTheme"
 36371>    Set peAlignView to alignCenter
 36372>    
 36372>    // It is important to set this so that all views will default
@@ -1480,7 +1480,7 @@ Including file: Dashboard.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Dashbo
 37362>>>        WebSetResponsive piColumnCount rmTabletPortrait to 16
 37363>>>    
 37363>>>        Object oTiles_grp is a cWebGroup
-37365>>>            Set piColumnSpan to 8
+37365>>>            Set piColumnSpan to 22
 37366>>>            Set pbShowBorder to False
 37367>>>            Set pbShowCaption to False
 37368>>>            Set piColumnCount to 12
@@ -1488,91 +1488,94 @@ Including file: Dashboard.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Dashbo
 37369>>>            Set psCSSClass to "TilesGroup"
 37370>>>    
 37370>>>            Object oWelcomeTile is a cWebHtmlBox
-37372>>>                Set piColumnSpan to 6
+37372>>>                Set piColumnSpan to 22
 37373>>>                Set psCSSClass to "Tile Light"
-37374>>>                Set psHtml to '<div Class="WebCon_Sizer"><div class="Tile_Title">FutbolWebApp</div><div Class="Tile_Subtitle">--</div></div>'
+37374>>>                Set psHtml to '<div Class="WebCon_Sizer"><div class="Tile_Title">FutbolWebApp</div><div Class="Tile_Subtitle"></div></div>'
 37375>>>    
 37375>>>                Procedure OnLoad
-37378>>>                    Send UpdateHTML ('<div class="WebCon_Sizer">' + ;                                     '<div class="Tile_Title">Welcome</div>' +;                                     '<div class="Tile_Subtitle">' - htmlEncode(psUserName(ghoWebSessionManager)) - '</div>' +;                                     '</div>')
+37378>>>                    Send UpdateHTML ('<div class="WebCon_Sizer">' + ;                                     '<div class="Tile_Title">FultbolWebApp</div>' +;                                     '<div class="Tile_Subtitle">' - htmlEncode(psUserName(ghoWebSessionManager)) - '</div>' +;                                     '</div>')
 37379>>>                End_Procedure
 37380>>>                
 37380>>>            End_Object
-37381>>>    
-37381>>>            Object oEntrenador_Tile is a cWebHtmlBox
+37381>>>            
+37381>>>              Object oLiga_Tile is a cWebHtmlBox
 37383>>>                Set pbServerOnClick to True
-37384>>>                Set piColumnSpan to 6
-37385>>>                Set piColumnIndex to 6
-37386>>>                Set psCSSClass to "Tile LightAlternate"
-37387>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Entrenadores</div><div class="Tile_Subtitle"></div></div>'
-37388>>>                                
-37388>>>                WebRegisterPath ntNavigateForwardCustom oSelectEntrenador
+37384>>>                Set piColumnSpan to 12
+37385>>>                Set piColumnIndex to 0
+37386>>>                Set psCSSClass to "Tile DarkAlternate"
+37387>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Ligas</div><div class="Tile_Subtitle"></div></div>'
+37388>>>            
+37388>>>                WebRegisterPath ntNavigateForwardCustom oSelectLiga
 37394>>>                
 37394>>>                Procedure OnClick String sId String sParam
 37397>>>                    Send NavigatePath
 37398>>>                End_Procedure
 37399>>>                
-37399>>>            End_Object
-37400>>>    
-37400>>>            Object oJugador_Tile is a cWebHtmlBox
+37399>>>              End_Object
+37400>>>              
+37400>>>              
+37400>>>              Object oEquipo_Tile is a cWebHtmlBox
 37402>>>                Set pbServerOnClick to True
 37403>>>                Set piColumnSpan to 6
-37404>>>                Set psCSSClass to "Tile Dark"
-37405>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Jugadores</div><div class="Tile_Subtitle"></div></div>'
-37406>>>    
-37406>>>                WebRegisterPath ntNavigateForwardCustom oSelectJugador
-37412>>>                
-37412>>>                Procedure OnClick String sId String sParam
-37415>>>                    Send NavigatePath
-37416>>>                End_Procedure
-37417>>>                
-37417>>>            End_Object
-37418>>>    
-37418>>>            Object oPosicion_Tile is a cWebHtmlBox
-37420>>>                Set pbServerOnClick to True
-37421>>>                Set piColumnSpan to 6
-37422>>>                Set piColumnIndex to 6
-37423>>>                Set psCSSClass to "Tile DarkAlternate"
-37424>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Posiciones</div><div class="Tile_Subtitle"></div></div>'
-37425>>>            
-37425>>>                WebRegisterPath ntNavigateForwardCustom oSelectPosicion
-37431>>>                
-37431>>>                Procedure OnClick String sId String sParam
-37434>>>                    Send NavigatePath
-37435>>>                End_Procedure
-37436>>>                
-37436>>>            End_Object
-37437>>>            
-37437>>>            
-37437>>>            Object oEquipo_Tile is a cWebHtmlBox
-37439>>>                Set pbServerOnClick to True
-37440>>>                Set piColumnSpan to 6
-37441>>>                Set piColumnIndex to 6
-37442>>>                Set psCSSClass to "Tile DarkAlternate"
-37443>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Equipos</div><div class="Tile_Subtitle"></div></div>'
-37444>>>            
-37444>>>                WebRegisterPath ntNavigateForwardCustom oSelectEquipo
+37404>>>                Set piColumnIndex to 0
+37405>>>                Set psCSSClass to "Tile DarkAlternate"
+37406>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Equipos</div><div class="Tile_Subtitle"></div></div>'
+37407>>>            
+37407>>>                WebRegisterPath ntNavigateForwardCustom oSelectEquipo
+37413>>>                
+37413>>>                Procedure OnClick String sId String sParam
+37416>>>                    Send NavigatePath
+37417>>>                End_Procedure
+37418>>>                
+37418>>>            End_Object
+37419>>>            
+37419>>>    
+37419>>>            Object oEntrenador_Tile is a cWebHtmlBox
+37421>>>                Set pbServerOnClick to True
+37422>>>                Set piColumnSpan to 6
+37423>>>                Set piColumnIndex to 6
+37424>>>                Set psCSSClass to "Tile LightAlternate"
+37425>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Entrenadores</div><div class="Tile_Subtitle"></div></div>'
+37426>>>                                
+37426>>>                WebRegisterPath ntNavigateForwardCustom oSelectEntrenador
+37432>>>                
+37432>>>                Procedure OnClick String sId String sParam
+37435>>>                    Send NavigatePath
+37436>>>                End_Procedure
+37437>>>                
+37437>>>            End_Object
+37438>>>    
+37438>>>            Object oJugador_Tile is a cWebHtmlBox
+37440>>>                Set pbServerOnClick to True
+37441>>>                Set piColumnSpan to 6
+37442>>>                Set psCSSClass to "Tile Dark"
+37443>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Jugadores</div><div class="Tile_Subtitle"></div></div>'
+37444>>>    
+37444>>>                WebRegisterPath ntNavigateForwardCustom oSelectJugador
 37450>>>                
 37450>>>                Procedure OnClick String sId String sParam
 37453>>>                    Send NavigatePath
 37454>>>                End_Procedure
 37455>>>                
 37455>>>            End_Object
-37456>>>            
-37456>>>            
-37456>>>            Object oLiga_Tile is a cWebHtmlBox
+37456>>>    
+37456>>>            Object oPosicion_Tile is a cWebHtmlBox
 37458>>>                Set pbServerOnClick to True
 37459>>>                Set piColumnSpan to 6
 37460>>>                Set piColumnIndex to 6
 37461>>>                Set psCSSClass to "Tile DarkAlternate"
-37462>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Ligas</div><div class="Tile_Subtitle"></div></div>'
+37462>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Posiciones</div><div class="Tile_Subtitle"></div></div>'
 37463>>>            
-37463>>>                WebRegisterPath ntNavigateForwardCustom oSelectLiga
+37463>>>                WebRegisterPath ntNavigateForwardCustom oSelectPosicion
 37469>>>                
 37469>>>                Procedure OnClick String sId String sParam
 37472>>>                    Send NavigatePath
 37473>>>                End_Procedure
 37474>>>                
 37474>>>            End_Object
+37475>>>            
+37475>>>
+37475>>>   
 37475>>>            
 37475>>>            
 37475>>>        End_Object
@@ -3449,7 +3452,7 @@ Including file: SelectLiga.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Selec
 38998>Send StartWebApp of oWebApp
 38999>
 Summary
-Memory Available: 44369788928
+Memory Available: 43958153216
 Total Warnings : 0
 Total Errors   : 0
 Total Symbols  : 25605
@@ -3457,6 +3460,6 @@ Total Resources: 0
 Total Commands : 38998
 Total Windows  : 0
 Total Pages    : 0
-Static Data    : 483241
+Static Data    : 483249
 Message area   : 261096
 Total Blocks   : 17292
