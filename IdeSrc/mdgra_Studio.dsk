@@ -7,7 +7,7 @@ GroupCount=1
 HorizontalGroups=1
 [TabGroup0]
 GroupSize=40
-SelectedTab=4
+SelectedTab=5
 [Window0]
 Filename=Workspace Dashboard
 ViewType=101
@@ -57,7 +57,18 @@ Top=21
 Left=0
 Bottom=718
 Right=1428
-CursorLine=96
-CursorColumn=18
+CursorLine=102
+CursorColumn=0
 TabIndex=4
+TabGroup=0
+[Window5]
+Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomEquipo.wo
+ViewType=1
+Top=21
+Left=0
+Bottom=718
+Right=1428
+CursorLine=0
+CursorColumn=0
+TabIndex=5
 TabGroup=0
