@@ -51,8 +51,7 @@ Object oZoomEquipo is a cWebView
             Set psLabel to "Liga"
             Set pbPromptButton to True
 
-// ToDo: Fill in the from-child parent Select view object name for navigate forward
-//            WebRegisterPath ntNavigateForward oSelectView
+        WebRegisterPath ntNavigateForward oSelectLiga
 
             Procedure OnPrompt
                 Send NavigatePath
@@ -162,6 +161,7 @@ Object oZoomEquipo is a cWebView
                 Case Break
 
             Case (NavigateData.eNavigateType = nfFromParent)
+                
                 // If from parent, this is a constrained drill down.
                 Case Break
 
