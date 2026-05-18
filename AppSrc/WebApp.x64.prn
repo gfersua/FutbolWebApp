@@ -1,5 +1,5 @@
 Compiling Program: C:\DataFlex Projects\FutbolWebApp\AppSrc\WebApp.src
-Memory Available: 43695341568
+Memory Available: 43859181568
 1>Use AllWebAppClasses.pkg
 Using pre-compiled package ALLWEBAPPCLASSES.PKG
 Including file: AllWebAppClasses.x64.pkd    (C:\Program Files\DataFlex 25.0\Pkg\AllWebAppClasses.x64.pkd)
@@ -3517,7 +3517,7 @@ Including file: SelectLiga.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Selec
 39067>Send StartWebApp of oWebApp
 39068>
 Summary
-Memory Available: 43668606976
+Memory Available: 43853172736
 Total Warnings : 0
 Total Errors   : 0
 Total Symbols  : 25627
