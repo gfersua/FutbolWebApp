@@ -72,14 +72,13 @@ Object oZoomJugador is a cWebView
             Set psLabel to "Equipo"
             Set pbPromptButton to True
 
-
-    
-// ToDo: Fill in the from-child parent Select view object name for navigate forward
-//            WebRegisterPath ntNavigateForward oSelectView
+            WebRegisterPath ntNavigateForward oSelectEquipo
 
             Procedure OnPrompt
                 Send NavigatePath
             End_Procedure
+    
+
         End_Object 
         
         
