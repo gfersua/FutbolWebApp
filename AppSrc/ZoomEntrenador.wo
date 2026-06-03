@@ -85,6 +85,23 @@ Object oZoomEntrenador is a cWebView
                 Send NavigatePath
             End_Procedure
         End_Object 
+        
+        
+           Object oDespedirBtn is a cWebButton
+            Set psCaption to "Despedir"
+            Set piColumnSpan to 4
+          
+      
+            Procedure onClick
+                
+                Send Request_ClearBindingTable of oequipoNombre
+                    
+            End_Procedure
+                
+          End_Object
+        
+        
+        
     End_Object 
 
     Object oActionGroup is a cWebMenuGroup
