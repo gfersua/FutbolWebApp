@@ -5,6 +5,13 @@ Open hijojugador
 Open jugadorposicion
 Open equipo
 
+
+Object oNacionalidadTypeValidation is a CodeValidationTable
+    Set Type_Value to "NACION"
+End_Object
+
+
+
 Class cjugadorDataDictionary is a DataDictionary
     
     Procedure Construct_Object
@@ -12,6 +19,9 @@ Class cjugadorDataDictionary is a DataDictionary
         Set Main_File to jugador.File_Number
 
         Set Add_Server_File to equipo.File_Number
+        
+        Set ParentNullAllowed jugador.File_Number to True
+        
 
         Set Add_Client_File to hijojugador.File_Number
         Set Add_Client_File to jugadorposicion.File_Number
@@ -20,7 +30,15 @@ Class cjugadorDataDictionary is a DataDictionary
         Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
         Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
         Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+        
+        
+        
+        Set Field_Value_Table Field jugador.Nacionalidad to oNacionalidadTypeValidation
+       
 
     End_Procedure
+    
+    
+    
 
 End_Class
