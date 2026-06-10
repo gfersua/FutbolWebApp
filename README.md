@@ -5,18 +5,36 @@ A diferencia de tecnologías con grandes comunidades, trabajar con DataFlex ha s
 
 
 
-Aprendizaje: 
+🎯 Objetivos de aprendizaje
 
--Lógica de programación:
-  Estructuras de control, navegación entre vistas y manejo de eventos.
-  Diseño de flujos de datos entre objetos y DataDictionaries.
-  Depuración de errores sin el apoyo de Stack Overflow o foros activos.
- 
--Bases de datos
-  Modelado relacional con MySQL.
-  Operaciones CRUD a través de los DataDictionaries de DataFlex.
-  Gestión de relaciones entre tablas y uso de índices para búsquedas eficientes.
+🧠 Lógica de programación
 
--Uso de documentación oficial
-  Al ser un lenguaje con escaso soporte comunitario, este proyecto ha exigido consultar y comprender la documentación oficial de DataFlex de forma continua.
+-Estructuras de control, navegación entre vistas y manejo de eventos.
+
+-Diseño de flujos de datos entre objetos y DataDictionaries.
+
+-Depuración de errores sin el apoyo de Stack Overflow o foros activos.
+
+
+🗄️ Bases de datos
+
+-Modelado relacional con MySQL.
+
+-Operaciones CRUD a través de los DataDictionaries de DataFlex.
+
+-Gestión de relaciones entre tablas y uso de índices para búsquedas eficientes.
+
+
+🔀 Control de versiones
+
+-Uso de Git y GitHub para el seguimiento del historial de cambios del proyecto.
+
+-Aplicación de una filosofía de trabajo con ramas: cada funcionalidad o corrección se desarrolla en su propia rama, manteniando la rama principal siempre en un estado estable.
+
+-Familiarización con el flujo de trabajo habitual en entornos profesionales: crear rama → desarrollar → revisar → fusionar.
+
+
+📚 Uso de documentación oficial
+
+-Al ser un lenguaje con escaso soporte comunitario, este proyecto ha exigido consultar y comprender la documentación oficial de DataFlex de forma continua.
 
