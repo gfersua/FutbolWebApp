@@ -71,6 +71,12 @@ Object oZoomEntrenador is a cWebView
             Set peLabelPosition to lpTop
             Set psLabel to "Equipo"
             Set pbPromptButton to True
+            
+            WebRegisterPath ntNavigateForward oSelectEquipo
+
+            Procedure OnPrompt
+                Send NavigatePath
+            End_Procedure
 
 // ToDo: Fill in the from-child parent Select view object name for navigate forward
 //            WebRegisterPath ntNavigateForward oSelectView
@@ -79,6 +85,23 @@ Object oZoomEntrenador is a cWebView
                 Send NavigatePath
             End_Procedure
         End_Object 
+        
+        
+           Object oDespedirBtn is a cWebButton
+            Set psCaption to "Despedir"
+            Set piColumnSpan to 4
+          
+      
+            Procedure onClick
+                
+                Send Request_ClearBindingTable of oequipoNombre
+                    
+            End_Procedure
+                
+          End_Object
+        
+        
+        
     End_Object 
 
     Object oActionGroup is a cWebMenuGroup

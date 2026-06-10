@@ -56,6 +56,14 @@ Object oSelectEntrenador is a cWebView
             Set psCaption to "Apellido"
             Set piWidth to 600
         End_Object 
+        
+        
+        Object oentrenadorEquipo is a cWebColumn
+            Entry_Item equipo.Nombre
+            Set psCaption to "Equipo"
+            Set piWidth to 600
+        End_Object 
+        
 
         Object oDetailButton is a cWebColumnButton
             Set psCaption to "btn"

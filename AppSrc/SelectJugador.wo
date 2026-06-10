@@ -32,7 +32,9 @@ Object oSelectJugador is a cWebView
     Object ojugador_DD is a cjugadorDataDictionary
         Set DDO_Server To oequipo_DD
     End_Object 
-
+    
+    
+   
     Set Main_DD To ojugador_DD
     Set Server  To ojugador_DD
 
@@ -47,13 +49,32 @@ Object oSelectJugador is a cWebView
 
         Object ojugadorNombre is a cWebColumn
             Entry_Item jugador.Nombre
+            Set psLabel to "Nombre"
             Set psCaption to "Nombre"
             Set piWidth to 600
         End_Object 
 
         Object ojugadorApellido is a cWebColumn
             Entry_Item jugador.Apellido
+            Set psLabel to "Apellido"
             Set psCaption to "Apellido"
+            
+            Set piWidth to 600
+        End_Object 
+        
+        
+        Object ojugadorNacionalidad is a cWebColumnCombo
+            Entry_Item jugador.Nacionalidad
+            Set psLabel to "Nacionalidad"
+            Set psCaption to "Nacionalidad"
+            Set piWidth to 600
+        End_Object 
+        
+        
+         Object onombreEquipo is a cWebColumn
+            Entry_Item equipo.Nombre
+            Set psLabel to "Equipo"
+            Set psCaption to "Equipo"
             Set piWidth to 600
         End_Object 
 

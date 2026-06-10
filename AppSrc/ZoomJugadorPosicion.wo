@@ -1,5 +1,5 @@
-﻿// C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomJugador.wo
-// ZoomJugador
+﻿// C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomJugadorPosicion.wo
+// ZoomJugadorPosicion
 //
 
 Use cWebView.pkg
@@ -14,9 +14,9 @@ Use cjugadorDataDictionary.dd
 Use cposicionDataDictionary.dd
 Use cjugadorposicionDataDictionary.dd
 
-Object oZoomJugador is a cWebView
+Object oZoomJugadorPosicion is a cWebView
     Set piColumnCount to 12
-    Set psCaption to "Jugador"
+    Set psCaption to "ZoomJugadorPosicion"
     Set peWebViewStyle to wvsDrilldown
     Set peViewType to vtZoom
     Set pbShowCaption to False
@@ -33,108 +33,38 @@ Object oZoomJugador is a cWebView
     Object ojugador_DD is a cjugadorDataDictionary
         Set DDO_Server To oequipo_DD
     End_Object 
-    
+
     Object oposicion_DD is a cposicionDataDictionary
-    End_Object
-    
+    End_Object 
+
     Object ojugadorposicion_DD is a cjugadorposicionDataDictionary
-        Set DDO_Server to ojugador_DD
-        Set DDO_Server to oposicion_DD
+        Set DDO_Server To ojugador_DD
+        Set DDO_Server To oposicion_DD
+    End_Object 
 
-        Set Constrain_File to jugador.File_Number
-    End_Object
-
-
-    Set Main_DD To ojugador_DD
-    Set Server  To ojugador_DD
+    Set Main_DD To ojugadorposicion_DD
+    Set Server  To ojugadorposicion_DD
 
 
     Object oWebMainPanel is a cWebPanel
         Set piColumnCount to 12
         WebSetResponsive piColumnCount rmMobile to 4
 
-        Object ojugadorNombre is a cWebForm
-            Entry_Item jugador.Nombre
-            Set piColumnSpan to 10
+        Object oposicionNombre is a cWebForm
+            Entry_Item posicion.Nombre
+            Set piColumnSpan to 9
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
-            Set psLabel to "Nombre"
-        End_Object 
-
-        Object ojugadorApellido is a cWebForm
-            Entry_Item jugador.Apellido
-            Set piColumnSpan to 10
-            Set piColumnIndex to 0
-            Set peLabelPosition to lpTop
-            Set psLabel to "Apellido"
-        End_Object 
-
-        Object ojugadorNacionalidad is a cWebCombo
-            Entry_Item jugador.Nacionalidad
-            Set piColumnSpan to 8
-            Set piColumnIndex to 0
-            Set peLabelPosition to lpTop
-            Set psLabel to "Nacionalidad"
-        End_Object 
-
-        Object oequipoNombre is a cWebForm
-            Entry_Item equipo.Nombre
-            Set piColumnSpan to 6
-            Set piColumnIndex to 0
-            Set peLabelPosition to lpTop
-            Set psLabel to "Equipo"
+            Set psLabel to "Posición"
             Set pbPromptButton to True
 
-            WebRegisterPath ntNavigateForward oSelectEquipo
+// ToDo: Fill in the from-child parent Select view object name for navigate forward
+//            WebRegisterPath ntNavigateForward oSelectView
 
             Procedure OnPrompt
                 Send NavigatePath
             End_Procedure
-    
-
         End_Object 
-        
-        Object ojugadorPosicion_List is a cWebList
-            
-            Set Server to ojugadorposicion_DD
-
-            Object oposicionNombre is a cWebColumn
-                Entry_Item posicion.Nombre
-                Set psCaption to "Posición"
-                Set piColumnSpan to 10
-                Set piColumnIndex to 0
-                Set peLabelPosition to lpTop
-                Set psLabel to "Posición"
-            End_Object
-
-        End_Object 
-        
-        Object oBotonVerPosiciones is a cWebButton
-            Set psCaption to "Editar posición"
-            Set piColumnSpan to 4
-                 
-            WebRegisterPath ntNavigateForward oSelectJugadorPosicion
-                
-            Procedure OnClick
-                Send NavigatePath
-            End_Procedure
-     
-         End_Object
-            
-         Object oQuitarEquipo is a cWebButton
-            Set psCaption to "Eliminar equipo"
-            Set piColumnSpan to 4
-            Set piColumnIndex to 5
-                
-            Procedure onClick
-               
-                Send Request_ClearBindingTable of oequipoNombre
-                
-                    
-            End_Procedure
-                
-          End_Object
-         
     End_Object 
 
     Object oActionGroup is a cWebMenuGroup
@@ -215,7 +145,6 @@ Object oZoomJugador is a cWebView
     Procedure OnViewDeleted Handle hoDDO
         Send NavigateClose Self
     End_Procedure
-    
 
     Procedure OnNavigateForward tWebNavigateData NavigateData Integer hoInvokingView Integer hoInvokingObject
         Case Begin
@@ -231,14 +160,12 @@ Object oZoomJugador is a cWebView
                 // If from child, this is a probably a parent Zoom from a Zoom.
                 Case Break
 
-            Case Else  
-                Send NavigatePath// must be nfUndefined
+            Case Else // must be nfUndefined
 
         Case End
 
         Send SetActionButtons
-        Send RefreshListFromDD of ojugadorPosicion_List
-        
+
     End_Procedure
 
 End_Object 
