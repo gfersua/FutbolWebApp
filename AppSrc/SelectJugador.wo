@@ -32,7 +32,9 @@ Object oSelectJugador is a cWebView
     Object ojugador_DD is a cjugadorDataDictionary
         Set DDO_Server To oequipo_DD
     End_Object 
-
+    
+    
+   
     Set Main_DD To ojugador_DD
     Set Server  To ojugador_DD
 
